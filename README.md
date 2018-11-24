@@ -7,16 +7,12 @@ Provides layouts and views for landing pages.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ado-landing-pages'
+gem 'ado-landing-pages', git: "https://github.com/AdoPisoWiFi/ado-landing-pages"
 ```
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install ado-landing-pages
 
 ## Usage
 
