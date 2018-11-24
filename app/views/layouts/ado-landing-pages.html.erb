@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>AdoPiSoft | <%= @page_title or "WiFi Hotspot Mangement Software"%></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <%= render 'ado-landing-pages/partials/favicons' %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <%= stylesheet_link_tag "ado-landing-pages", media: "all" %>
+
+    <%= yield :head %>
+    <!-- =======================================================
+      Theme Name: TheEvent
+      Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+      ======================================================= -->
+  </head>
+
+  <body class="ado-landing-pages">
+
+    <%= yield :header %>
+
+    <div class="container">
+      <%= render 'ado-landing-pages/partials/flash' %>
+    </div>
+
+    <%= yield :content %>
+
+    <%= yield :footer %>
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <%= javascript_include_tag 'ado-landing-pages', 'data-turbolinks-track': 'reload' %>
+
+    <%= yield :javascripts %>
+
+  </body>
+
+</html>
