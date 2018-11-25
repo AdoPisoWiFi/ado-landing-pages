@@ -1,0 +1,54 @@
+<% content_for :head do %>
+  <script>
+    window.DISTRIBUTORS = <%= raw @distributors.to_json(only: [:website_url, :website_name, :display_name], include: [:user]) %>;
+  </script>
+<% end %>
+
+<%= render 'partials/machine_issues' %>
+
+<h2>Official Distributors List</h2>
+<hr>
+
+<p class="lead">
+Machines are built and assembled by distributors. Each may have different design, specifications and pricing so <em>please contact the distributor nearest your location for inquiries</em>.
+<p>
+
+
+<div ng-app="AdoDistributors" ng-controller="DistributorsCtrl">
+
+  <form>
+    <div class="form-group">
+      <label>Search Distributors:</label>
+      <input type="text" ng-model="searchText" placeholder="Type name, address, phone, etc." class="form-control">
+    </div>
+  </form>
+
+  <p ng-if="(distributors | filter:searchText).length == 0">
+  Nothing to show.
+  </p>
+
+  <table class="table table-bordered table-striped" ng-if="(distributors | filter:searchText).length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="d in distributors | filter:searchText" ng-if="(distributors | filter:searchText).length > 0">
+        <td ng-if="!d.display_name">{{d.user.first_name}} {{d.user.last_name}}</td>
+        <td ng-if="d.display_name">{{d.display_name}}</td>
+        <td>{{d.user.address}}</td>
+        <td>{{d.user.contact_number}}</td>
+        <td>
+          <a ng-if="d.website_url && d.website_name" ng-href="{{d.website_url}}" target="_blank">{{d.website_name}}</a>
+        </td>
+        <td><a ng-href="mailto:{{d.user.email}}">{{d.user.email}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

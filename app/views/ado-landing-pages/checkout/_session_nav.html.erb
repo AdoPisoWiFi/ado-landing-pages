@@ -1,0 +1,15 @@
+
+<p class="text-right" id="checkout-nav">
+<% if user_signed_in? %>
+  <%= current_user.email %>
+  |
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    Sign Out
+  <% end %>
+<% else %>
+  <%= link_to(new_user_session_path({redirect_to: view_cart_path})) do %>
+    Sign In / Register
+  <% end %>
+<% end %>
+</p>
+

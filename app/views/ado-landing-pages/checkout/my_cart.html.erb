@@ -1,0 +1,107 @@
+
+<% content_for :head do %>
+  <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+  <script>
+    window.CART = <%= raw @cart.to_json =%>;
+  </script>
+<% end %>
+
+<% content_for :content do %>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-6 offset-md-3">
+
+        <h3 class="text-center">
+          Your Cart <i class="fa fa-shopping-cart"></i>
+        </h3>
+        <hr>
+
+        <%= render 'ado-landing-pages/checkout/session_nav' %>
+
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>License</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cart.each do |cart| %>
+              <tr>
+                <td><%= cart["name"] %></td>
+                <td>
+                  <%= cart["quantity"].to_i %>
+                </td>
+                <td><%= number_to_currency(cart["price"].to_i * (cart["quantity"] || 0).to_i, unit: @currency)%></td>
+                <td>
+                  <form method="POST" action="<%= delete_cart_path(package_id: cart["package_id"]) %>">
+                    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </form>
+
+                </td>
+              </tr>
+            <% end %>
+            <tr>
+              <td colspan="4">
+                <% if @cart.count == 0 %>
+                  No items to show.
+                <% end %>
+                <%= link_to activation_path do %>
+                  <% if @cart.count == 0 %>
+                    Continue shopping...
+                  <% else %>
+                    Add more...
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="lead text-right">
+        Total:
+        <b>
+          <%= number_to_currency(computed_total(@cart), unit: @currency) %>
+        </b>
+        </p>
+        <% if computed_save(@cart) > 0 %>
+          <p class="text-success text-right">
+          You saved <strong><%= number_to_currency(computed_save(@cart), unit: @currency) %></strong>
+          </p>
+          <hr>
+        <% end %>
+
+        <div class="text-center">
+          <div id="paypal-button"></div>
+        </div>
+
+        <hr>
+
+        <p>
+        <small>The license key(s) will be sent to your email
+          <% if user_signed_in? %>
+            <b><%= current_user.email %></b>
+          <% end %>
+          and will also be shown in the screen after purchasing.</small>
+        </p>
+
+        <p class="alert alert-warning">
+        NOTE: If the transaction is successful and you did not receive your license key(s), please login to
+        <a href="https://monitor.adopisowifi.com" target="_blank">https://monitor.adopisowifi.com</a>
+        to see your license key(s).
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+<% end %>
+

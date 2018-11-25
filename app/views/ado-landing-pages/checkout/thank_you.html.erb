@@ -1,0 +1,39 @@
+<% content_for :content do %>
+  <div class="container section">
+    <h1 class="text-success">Thank You!</h1>
+    <hr>
+    <p>
+    Thanks for the purchase, <%= @purchase.user.first_name %>!
+    </p>
+    <p>
+    Good luck on your business. We're happy to give you your license key!
+    </p>
+    <p>
+    We also sent a copy of the license key to <strong><%= @purchase.user.email %></strong> to make sure you don't lose it. If the email does not appear, please check your
+    spam folder or wait for few more minutes or login to
+    <a href="https://monitor.adopisowifi.com">https://monitor.adopisowifi.com</a>.
+    </p>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Activation Code</th>
+          <th>Volume License</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @purchase.product_keys.each do |pk| %>
+          <tr ng-repeat="pk in purchase_data.product_keys">
+            <td><%= pk.code %></td>
+            <td>Can activate <%= pk.volume %> wifi vending machine(s)</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to "Buy More", activation_path, class: "btn btn-success" %>
+
+  </div>
+
+
+<% end %>
+

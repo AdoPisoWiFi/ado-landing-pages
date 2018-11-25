@@ -7,15 +7,16 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6 footer-info">
-            <img src="/assets/img/logo.png" alt="TheEvenet">
+            <%= image_tag "img/logo.png", alt: app_name %>
             <%= render 'ado-landing-pages/partials/about_text' %>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="<%= root_url %>">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="<%= thredded_url %>">Forum</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="<%= buy_url %>">Distributors List</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="<%= guide_url %>">Basic Setup Guide</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>

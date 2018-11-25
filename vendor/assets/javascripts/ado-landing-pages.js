@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require angular
+//= require ado-landing-pages/libs/q
 //= require ado-landing-pages/libs/jquery.min
 //= require ado-landing-pages/libs/jquery-migrate.min
 //= require ado-landing-pages/libs/bootstrap.bundle.min
@@ -21,6 +23,8 @@
 //= require ado-landing-pages/libs/owl.carousel.min
 //= require ado-landing-pages/contactform
 //= require ado-landing-pages/main
+//= require ado-landing-pages/checkout
+//= require ado-landing-pages/distributors
 //= require jquery_ujs
 //= require turbolinks
 //= require toastr

@@ -1,0 +1,124 @@
+
+
+<h2>
+  AdoPiSoft Basic Setup with Raspberry Pi 3
+</h2>
+
+<hr>
+<p class="lead">
+This is a basic guide on how to flash <%= app_name %> software into <strong>Raspberry Pi 3 Model B/B+</strong> and have a working coin-operated wifi hotspot machine. You can also use this guide to reformat your old machine and install our latest image.
+<p>
+<p>
+If you want a production-ready wifi hotspot machine, please <%= link_to "contact the distributors", buy_url %>.
+</p>
+
+<%= render 'partials/diy_warning' %>
+
+<div class="container guide">
+
+  <h3>Step 1: Prepare the materials needed</h3>
+  <p><i>If you don't have the coin acceptor yet, you can still proceed to install the software and configure your wifi vending machine as long as you have a<b>raspberry pi</b>,<b>power supply</b>(for raspberry pi) and a<b>micro SD card</b>. You won't be able to test the payment functionality though.</i></p>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <ul>
+        <li><a href="https://www.lazada.com.ph/catalog/?spm=a2o4l.searchlist.search.1.7c0debcdVc81aa&amp;q=raspberry%20pi%203%20model%20b&amp;_keyori=ss&amp;from=suggest_normal&amp;sugg=raspberry%20pi%203%20model%20b_0_1" class="lead"><b>Raspberry Pi 3 Model B or B+</b></a>
+          <p>
+          <%= image_tag "ado-landing-pages/raspberrypi.jpg" %>
+          </p>
+          <hr>
+        </li>
+        <li><a href="https://www.lazada.com.ph/catalog/?q=universal+coin+acceptor&amp;_keyori=ss&amp;from=input&amp;spm=a2o4l.searchlist.search.go.6ae8f127FaauMH" class="lead"><b>Universal Coinslot / Multi-coin Acceptor</b></a>
+          <p>
+          <%= image_tag "ado-landing-pages/coinslot.jpg" %>
+          </p>
+          <hr>
+        </li>
+        <li>
+          <p class="lead text-primary"><b>Others</b></p>
+          <ul>
+            <li>4GB (or higher) Micro SD Card - class 6 or 10 (important)</li>
+            <li>Micro SD Card Reader</li>
+          </ul>
+          <p class="text-danger"><b>Important: The micro SD card must be of high quality. Use Sandisk Ultra or Samsung Evo</b></p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        <li><a href="https://www.lazada.com.ph/catalog/?q=raspberry+power+supply&amp;_keyori=ss&amp;from=input&amp;spm=a2o4l.searchlist.search.go.6167d47es6VtxD" class="lead"><b>Raspberry Power Supply</b></a>
+          <p>
+          <%= image_tag "ado-landing-pages/raspberry-supply.jpg" %>
+          </p>
+          <hr>
+        </li>
+        <li>
+          <p class="lead"><b class="text-primary">12 Volts DC Power Supply</b></p>
+          <p>12V DC at least 1A output power supply.</p>
+          <p>This is used to power the coin acceptor. You must identify the positive and ground terminal using voltmeter.
+          <%= image_tag "ado-landing-pages/12v-dc.jpg" %>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <h3>Step 2: Software Installation</h3>
+  <hr>
+  <p><b>Needed softwares:</b></p>
+  <ul>
+    <li>Download and install <a href="https://etcher.io/" target="_blank">Etcher</a> to your computer.</li>
+    <li>Download <a href="https://s3.amazonaws.com/adopisowifi/downloads/adopisowifi-v3.0.77-usb-boot-mode.zip" onclick="ga('send', 'event', 'buttons', 'click', 'download_installer');" target="blank">Ado Piso WiFi Raspbian Image</a></li>
+  </ul>
+  <hr>
+  <p>After downloading the needed softwares, we need to flash the installer into the midro SD card using Etcher. To do so, unzip the contents of<code>adopisowifi.zip</code></p>
+  <p>Insert the micro SD card into the your computer using a card reader.</p>
+  <p>Open Etcher and click <code>Select Image.</code></p>
+  <%= image_tag "ado-landing-pages/etcher/select-image.jpeg", class: "etcher" %>
+  <hr>
+  <p> Then select <code>adopisowifi-(version).img</code> from the zip file.</p>
+  <%#<img src="/img/etcher/select-adopisowifi-img.png" class="default-img">%>
+  <%= image_tag "ado-landing-pages/etcher/select-adopisowifi-img.png", class: "etcher" %>
+  <hr>
+  <p>Make sure to select your micro SD card</p>
+  <%= image_tag "ado-landing-pages/etcher/select-usb-drive.png", class: "etcher" %>
+  <hr>
+  <p>Click the <code><strong>Flash!</strong></code>  button and wait for the process to finish.</p>
+  <div class="alert alert-info"><strong>NOTE:</strong>
+    <p>If you encounter prompts about formatting your sd card, just click <code>Cancel.</code></p>
+  </div>
+  <hr>
+  <h3>Step 3: Configure The Machine</h3>
+  <hr>
+  <div class="alert alert-info">
+    <p><strong>IMPORTANT:</strong></p>
+    <p>Make sure you do the following before turning on the raspberry:</p>
+    <ul>
+      <li>Insert the SD card into the raspberry sd slot.</li>
+      <li>Insert the LAN cable into the ethernet port of raspberry pi and make sure it is connected to internet</li>
+    </ul>
+  </div>
+  <p><b>Note: You don't have to insert a monitor to the HDMI port.</b></p>
+  <p>Turn on the raspberry pi and  wait for the <code>AdoPisoWifi </code>WiFi network to appear, it may take a couple of minutes.</p>
+  <p>Connect to the wifi network using your laptop or smartphone. Once connected, open a browser and go to <a href="http://10.0.0.1">http://10.0.0.1/admin</a></p>
+  <p>username:<code>admin</code></p>
+  <p>password:<code>admin</code></p>
+  <p><i>(The machine is also accessible in your ethernet using its WAN IP.)</i></p>
+  <%#<p>After successful login, go to <code>Timer Settings </code>and at the bottom of the page, set <code>Coinslot Sensor to version 2.</code></p>%>
+  <%#<div class="text-center"></div><img src="/img/timer-settings-select-v2.jpeg" style="width: 100%; max-width: 900px;">%>
+  <hr>
+  <h3>Step 4: Connecting All Components</h3>
+  <hr>
+  <p>Connect all the connections base on the circuit diagram. Make sure to check the positive ang negative terminal of the 12V DC power supply for the coinslot to work properly.</p>
+  <%= image_tag "ado-landing-pages/circuit-diagram-v2-new.jpg", class: "etcher" %>
+  <%#<img style="margin: 0 auto; max-width: 1024px; display: block; width: 100%;" src="/img/circuit-diagram-v2-new.jpg">%>
+  <p class="text-center">
+  <%#<a href="/img/circuit-diagram-v2-new.jpg" target="_blank">View Full Image</a></p>%>
+  <hr>
+  <h3>Step 5: Update the Software</h3>
+  <p>Software is constantly being improved, you need to update the software after installation to get the latest features. To update the software, go to the admin settings and navigate to <code>Device </code>section. Then click the <code>Check For Updates </code>button at the bottom of the page. Then click for <code>Install Updates </code>button.</p>
+  <hr>
+  <h3>Join our Community</h3>
+  <p>We have a lot of users that have already created a machine using our software. <a href="<%= thredded_url %>" target="_blank">Join our discussions </a>and see what others are doing with their wifi vending machines.</p>
+  <p class="alert alert-info"><strong>Note:</strong><br>Raspberry will use it's built-in wifi module to broadcast the SSID. But its signal is very weak and recommended only for testing purposes. It is best to upgrade the antenna using<strong><a href="/articles/extend-wifi-signal-using-tenda-n301/">external access point / CPE antenna</a></strong> to extend the wifi range and speed of your wifi vending machine.</p>
+</div>
