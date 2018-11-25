@@ -13,6 +13,8 @@ gem "devise-bootstrap-views", "~> 1.0"
 gem 'ado-landing-pages', git: "https://github.com/AdoPisoWiFi/ado-landing-pages"
 ```
 
+Define view helpers for `app_name` and `support_email` methods.
+
 And then execute:
 
     $ bundle
