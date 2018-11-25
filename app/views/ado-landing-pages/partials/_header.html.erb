@@ -12,7 +12,7 @@
         <ul class="nav-menu">
           <li class="<%= controller?(:static) && action?(:landing)? 'menu-active' : '' %>"><a href="<%= root_url %>#intro">Home</a></li>
           <li><a href="<%= thredded_url %>">Forum</a></li>
-          <li><a href="#">Downloads</a></li>
+          <li><a href="<%= downloads_url %>">Downloads</a></li>
           <%= render 'ado-landing-pages/partials/signup_nav_item' %>
           <li class="buy-tickets"><a href="<%= activation_url %>">Buy Licenses</a></li>
         </ul>
