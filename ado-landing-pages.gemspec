@@ -44,6 +44,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "angularjs-rails"
   spec.add_dependency "toastr-rails"
   spec.add_dependency "jquery-rails"
+  spec.add_dependency "font-awesome-rails"
 
 end
 

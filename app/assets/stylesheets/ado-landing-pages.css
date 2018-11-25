@@ -10,8 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 
+ *= require font-awesome 
  *= require ado-landing-pages/libs/bootstrap
- *= require ado-landing-pages/libs/font-awesome
  *= require ado-landing-pages/libs/animate
  *= require ado-landing-pages/libs/venobox
  *= require ado-landing-pages/libs/owl.carousel
