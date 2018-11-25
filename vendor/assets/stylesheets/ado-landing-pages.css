@@ -16,6 +16,7 @@
  *= require ado-landing-pages/libs/venobox
  *= require ado-landing-pages/libs/owl.carousel
  *= require ado-landing-pages/style
+ *= require toastr
  *= require_self
  */
 
@@ -31,3 +32,9 @@
   background-color: #000;
 }
 
+.ado-landing-pages #steps img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 400px;
+}

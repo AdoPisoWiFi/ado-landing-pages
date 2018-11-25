@@ -8,6 +8,8 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <%= csrf_meta_tags %>
+
     <%= render 'ado-landing-pages/partials/favicons' %>
 
     <!-- Google Fonts -->
@@ -26,21 +28,33 @@
 
   <body class="ado-landing-pages">
 
-    <%= yield :header %>
+    <% if content_for?(:header) %>
+      <%= yield :header %>
+    <% else %>
+      <%= render 'ado-landing-pages/partials/header' %>
+    <% end %>
 
-    <div class="container">
-      <%= render 'ado-landing-pages/partials/flash' %>
-    </div>
+    <% if content_for?(:content) %>
+      <%= yield :content %>
+    <% else %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% end %>
 
-    <%= yield :content %>
-
-    <%= yield :footer %>
+    <% if content_for?(:footer) %>
+      <%= yield :footer %>
+    <% else %>
+      <%= render 'ado-landing-pages/partials/footer' %>
+    <% end %>
 
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <%= javascript_include_tag 'ado-landing-pages', 'data-turbolinks-track': 'reload' %>
 
     <%= yield :javascripts %>
+
+    <%= render 'ado-landing-pages/partials/flash' %>
 
   </body>
 

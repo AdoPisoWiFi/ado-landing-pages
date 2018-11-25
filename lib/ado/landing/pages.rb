@@ -8,14 +8,14 @@ module Ado
 
       module AdoLandingPagesHelper
 
-        def flash_class(level)
+        def toastr_method(level)
           case level.to_sym
-          when :notice then "alert alert-info"
-          when :info then "alert alert-info"
-          when :success then "alert alert-success"
-          when :warning then "alert alert-warning"
-          when :error then "alert alert-danger"
-          when :alert then "alert alert-danger"
+          when :notice then "info"
+          when :info then "info"
+          when :success then "success"
+          when :warning then "warning"
+          when :error then "error"
+          when :alert then "error"
           end
         end
 

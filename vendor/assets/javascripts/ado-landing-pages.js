@@ -21,4 +21,8 @@
 //= require ado-landing-pages/libs/owl.carousel.min
 //= require ado-landing-pages/contactform
 //= require ado-landing-pages/main
+//= require jquery_ujs
+//= require turbolinks
+//= require toastr
+
 //

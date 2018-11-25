@@ -7,6 +7,9 @@ Provides layouts and views for landing pages.
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'jquery-rails'
+gem 'toastr-rails'
+gem "devise-bootstrap-views", "~> 1.0"
 gem 'ado-landing-pages', git: "https://github.com/AdoPisoWiFi/ado-landing-pages"
 ```
 
