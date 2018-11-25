@@ -21,8 +21,41 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+`application_controller.rb`
+```ruby
 
+layout 'layouts/ado-landing-pages'
+```
+
+Overriding default headers and footers, otherwise default headers and footers in `app/views/ado-landing-pages/partials` will be displayed.
+
+```ruby
+
+<% content_for :head do %>
+  <style>.additional-styles{}</style>
+<% end %>
+
+<% content_for :header do %>
+  <%= render 'ado-landing-pages/partials/intro_header' %>
+<% end %>
+
+<% content_for :content do %>
+  <%= render 'ado-landing-pages/partials/intro' %>
+  <%= render 'ado-landing-pages/partials/about' %>
+  <%= render 'ado-landing-pages/partials/features' %>
+  <%= render 'ado-landing-pages/partials/how_it_works' %>
+  <%= render 'ado-landing-pages/partials/buy_now' %>
+<% end %>
+
+<% content_for :footer do %>
+  <%= render 'ado-landing-pages/partials/footer' %>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script>alert("hello");</script>
+<% end %>
+
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
