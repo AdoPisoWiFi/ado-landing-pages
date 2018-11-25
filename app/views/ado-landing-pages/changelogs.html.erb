@@ -1,17 +1,19 @@
-<h2>Change Logs</h2>
-<ul class="list-group">
-  <% @changelogs.each do |c| %>
-  <li class="list-group-item">
-    <p>
-    <strong>Version <%= c.version %></strong>
-    </p>
-    <p>
-    <%= c.created_at.strftime("%B %d at %I:%M %p") %>
-    </p>
-    <p>
-      Description:
-    </p>
-    <pre><%= c.description %></pre>
-  </li>
-<% end %>
-</ul>
+<div class="section">
+  <h2>Change Logs</h2>
+  <ul class="list-group">
+    <% @changelogs.each do |c| %>
+      <li class="list-group-item">
+        <p>
+        <strong>Version <%= c.version %></strong>
+        </p>
+        <p>
+        <%= c.created_at.strftime("%B %d at %I:%M %p") %>
+        </p>
+        <p>
+        Description:
+        </p>
+        <pre><%= c.description %></pre>
+      </li>
+    <% end %>
+  </ul>
+</div>
