@@ -1,0 +1,22 @@
+.nav-menu li.signup-nav a {
+  color: #fff;
+  background: gray;
+  padding: 7px 22px;
+  border-radius: 50px;
+  border: 2px solid gray;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+  margin-left: 8px;
+  margin-top: 2px;
+  line-height: 1;
+  font-size: 13px;
+}
+
+.nav-menu li.signup-nav a:hover {
+  background: none;
+}
+
+.nav-menu li.signup-nav:hover a:before,
+.nav-menu li.signup-nav.menu-active a:before {
+  visibility: hidden;
+}
