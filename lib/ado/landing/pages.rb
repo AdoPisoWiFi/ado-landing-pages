@@ -27,6 +27,14 @@ module Ado
           action.include?(params[:action])
         end
 
+        def app_name
+          ENV["APP_NAME"] || 'changeme@ado-landing-pages/lib/pages.rb'
+        end
+
+        def support_email
+          ENV["SUPPORT_EMAI"] || 'changeme@ado-landing-pages/lib/pages.rb'
+        end
+
       end
 
       module Rails

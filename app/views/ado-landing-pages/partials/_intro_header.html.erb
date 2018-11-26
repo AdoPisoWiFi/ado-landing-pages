@@ -4,23 +4,23 @@
     <div id="logo" class="pull-left">
       <!-- Uncomment below if you prefer to use a text logo -->
       <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-      <a href="<%= root_url %>#intro" class="scrollto">
+      <a href="<%= main_app.root_url(subdomain: "www") %>#intro" class="scrollto">
         <%= image_tag "ado-landing-pages/logo.png", alt: app_name %>
       </a>
     </div>
 
     <nav id="nav-menu-container">
       <ul class="nav-menu">
-        <li class="menu-active"><a href="<%= root_url %>#intro">Home</a></li>
-        <li><a href="<%= root_url %>#about">About</a></li>
+        <li class="menu-active"><a href="<%= main_app.root_url(subdomain: "www") %>#intro">Home</a></li>
+        <li><a href="<%= main_app.root_url %>#about">About</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#how">How It Works</a></li>
-        <li><a href="<%= lines_url %>">Articles</a></li>
-        <li><a href="<%= thredded_url %>">Forum</a></li>
-          <li><a href="<%= monitor_url %>">Remote</a></li>
-        <li><a href="<%= downloads_url %>">Downloads</a></li>
+        <li><a href="<%= main_app.lines_url %>">Articles</a></li>
+        <li><a href="<%= main_app.thredded_url %>">Forum</a></li>
+        <li><a href="<%= main_app.monitor_url %>">Remote</a></li>
+        <li><a href="<%= main_app.downloads_url %>">Downloads</a></li>
         <%= render 'ado-landing-pages/partials/signup_nav_item' %>
-        <li class="buy-tickets"><a href="<%= activation_url %>">Buy Licenses</a></li>
+        <li class="buy-tickets"><a href="<%= main_app.activation_url %>">Buy Licenses</a></li>
       </ul>
     </nav><!-- #nav-menu-container -->
   </div>

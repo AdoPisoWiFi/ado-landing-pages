@@ -9,7 +9,7 @@
 This is a basic guide on how to flash <%= app_name %> software into <strong>Raspberry Pi 3 Model B/B+</strong> and have a working coin-operated wifi hotspot machine. You can also use this guide to reformat your old machine and install our latest image.
 <p>
 <p>
-If you want a production-ready wifi hotspot machine, please <%= link_to "contact the distributors", buy_url %>.
+If you want a production-ready wifi hotspot machine, please <%= link_to "contact the distributors", main_app.buy_url %>.
 </p>
 
 <%= render 'ado-landing-pages/partials/diy_warning' %>
@@ -119,6 +119,6 @@ If you want a production-ready wifi hotspot machine, please <%= link_to "contact
   <p>Software is constantly being improved, you need to update the software after installation to get the latest features. To update the software, go to the admin settings and navigate to <code>Device </code>section. Then click the <code>Check For Updates </code>button at the bottom of the page. Then click for <code>Install Updates </code>button.</p>
   <hr>
   <h3>Join our Community</h3>
-  <p>We have a lot of users that have already created a machine using our software. <a href="<%= thredded_url %>" target="_blank">Join our discussions </a>and see what others are doing with their wifi vending machines.</p>
+  <p>We have a lot of users that have already created a machine using our software. <a href="<%= main_app.thredded_url %>" target="_blank">Join our discussions </a>and see what others are doing with their wifi vending machines.</p>
   <p class="alert alert-info"><strong>Note:</strong><br>Raspberry will use it's built-in wifi module to broadcast the SSID. But its signal is very weak and recommended only for testing purposes. It is best to upgrade the antenna using<strong><a href="/articles/extend-wifi-signal-using-tenda-n301/">external access point / CPE antenna</a></strong> to extend the wifi range and speed of your wifi vending machine.</p>
 </div>
