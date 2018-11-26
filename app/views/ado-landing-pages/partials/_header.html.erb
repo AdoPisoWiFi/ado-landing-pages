@@ -5,7 +5,7 @@
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="<%= root_url %>#intro" class="scrollto">
+        <a href="<%= root_url(subdomain: "www") %>#intro" class="scrollto">
           <%= image_tag "ado-landing-pages/logo.png", alt: app_name %>
         </a>
       </div>
@@ -15,6 +15,7 @@
           <li class="<%= controller?(:static) && action?(:landing)? 'menu-active' : '' %>"><a href="<%= root_url %>#intro">Home</a></li>
           <li><a href="<%= lines_url %>">Articles</a></li>
           <li><a href="<%= thredded_url %>">Forum</a></li>
+          <li><a href="<%= monitor_url %>">Remote</a></li>
           <li><a href="<%= downloads_url %>">Downloads</a></li>
           <%= render 'ado-landing-pages/partials/signup_nav_item' %>
           <li class="buy-tickets"><a href="<%= activation_url %>">Buy Licenses</a></li>
