@@ -12,7 +12,7 @@
 //
 //= require angular
 //= require ado-landing-pages/libs/q
-//= require jquery
+//= require ado-landing-pages/libs/jquery.min
 //= require ado-landing-pages/libs/jquery-migrate.min
 //= require bootstrap
 //= require ado-landing-pages/libs/easing.min
