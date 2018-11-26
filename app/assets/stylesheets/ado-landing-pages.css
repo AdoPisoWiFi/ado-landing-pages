@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 
+ *= require toastr
  *= require font-awesome 
  *= require ado-landing-pages/libs/bootstrap
  *= require ado-landing-pages/libs/animate
@@ -18,7 +19,7 @@
  *= require ado-landing-pages/style
  *= require ado-landing-pages/buy-ticket
  *= require ado-landing-pages/signup-nav
- *= require toastr
+ *= require ado-landing-pages/index-bgs
  *= require_self
  */
 

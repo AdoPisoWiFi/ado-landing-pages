@@ -12,9 +12,9 @@
 //
 //= require angular
 //= require ado-landing-pages/libs/q
-//= require ado-landing-pages/libs/jquery.min
+//= require jquery
 //= require ado-landing-pages/libs/jquery-migrate.min
-//= require ado-landing-pages/libs/bootstrap.bundle.min
+//= require bootstrap
 //= require ado-landing-pages/libs/easing.min
 //= require ado-landing-pages/libs/hoverIntent
 //= require ado-landing-pages/libs/superfish.min
