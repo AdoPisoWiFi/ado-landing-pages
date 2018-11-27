@@ -10,8 +10,8 @@
     </p>
     <p>
     We also sent a copy of the license key to <strong><%= @purchase.user.email %></strong> to make sure you don't lose it. If the email does not appear, please check your
-    spam folder or wait for few more minutes or login to
-    <a href="https://monitor.adopisowifi.com">https://monitor.adopisowifi.com</a>.
+    spam folder or wait for few more minutes. You can also try to login to
+    <a href="<%= main_app.monitor_url %>">Remote Management Dashboard</a> to see if the keys were generated successfully.
     </p>
     <table class="table table-bordered">
       <thead>
@@ -30,7 +30,9 @@
       </tbody>
     </table>
 
-    <%= link_to "Buy More", activation_path, class: "btn btn-success" %>
+    <p class="text-center">
+    <%= link_to "Login To Dashboard", main_app.monitor_url, class: "btn btn-lg btn-primary" %>
+    </p>
 
   </div>
 
