@@ -32,7 +32,7 @@ module Ado
         end
 
         def support_email
-          ENV["SUPPORT_EMAI"] || 'changeme@ado-landing-pages/lib/pages.rb'
+          ENV["SUPPORT_EMAIL"] || 'changeme@ado-landing-pages/lib/pages.rb'
         end
 
       end
