@@ -27,5 +27,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require toastr
+//= require ado-landing-pages/toastr-config
 
 //
