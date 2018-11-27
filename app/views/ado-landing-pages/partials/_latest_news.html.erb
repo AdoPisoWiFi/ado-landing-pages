@@ -1,0 +1,21 @@
+<section class="container wow fadeIn">
+  <div class="section">
+    <div class="section-header">
+      <h2>
+        Latest News & Announcements
+      </h2>
+    </div>
+    <div class="list-group">
+      <% @announcements.each do |a| %>
+        <div class="list-group-item">
+          <p>
+            <i>
+              <%= a.created_at.strftime('%B %e at %l:%M %p') %>
+            </i>
+          </p>
+          <%= markdown(a.message) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
