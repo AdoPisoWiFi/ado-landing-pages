@@ -39,6 +39,7 @@ module Ado
 
       module Rails
         class Engine < ::Rails::Engine
+          config.assets.precompile += %w( ado-landing-pages/logo.css )
         end
       end
 

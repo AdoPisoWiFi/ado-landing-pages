@@ -20,6 +20,7 @@
  *= require ado-landing-pages/buy-ticket
  *= require ado-landing-pages/signup-nav
  *= require ado-landing-pages/index-bgs
+ *= require ado-landing-pages/logo
  *= require_self
  */
 
