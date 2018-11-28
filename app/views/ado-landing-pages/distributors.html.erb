@@ -20,6 +20,7 @@ Machines are built and assembled by distributors. Each may have different design
             <a ng-if="d.website_url && d.website_name" ng-href="{{d.website_url}}" target="_blank">{{d.website_name}}</a>
           </td>
           <td><a ng-href="mailto:{{d.user.email}}">{{d.user.email}}</a></td>
+          <td><a ng-href="{{('<%= main_app.user_profile_url({id: 'id'}) %>').replace('id', d.user.id)}}">View Profile</a></td>
         </tr>
   </script>
 
@@ -42,6 +43,7 @@ Machines are built and assembled by distributors. Each may have different design
         <th>Phone</th>
         <th>Website</th>
         <th>Email</th>
+        <th>View Profile</th>
       </tr>
     </thead>
     <tbody ng-include="'list.html'">
@@ -60,6 +62,9 @@ Machines are built and assembled by distributors. Each may have different design
             <% end %>
           </td>
           <td><a href="mailto:<%= d.user.email %>"><%= d.user.email %></a></td>
+          <td>
+            <%= link_to "View Profile", main_app.user_profile_url(d.user) %>
+          </td>
         </tr>
 
       <% end %>
