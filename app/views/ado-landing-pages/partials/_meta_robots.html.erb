@@ -1,0 +1,4 @@
+<% robots = ENV["ROBOTS"] %>
+<% if robots != '' && !robots.nil? %>
+  <meta name="robots" content="<%= robots %>" />
+<% end %>
