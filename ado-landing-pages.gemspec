@@ -46,6 +46,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "jquery-rails"
   spec.add_dependency "font-awesome-rails"
   spec.add_dependency 'bootstrap', '~> 4.1.3'
+  spec.add_dependency 'thredded', '~> 0.16.1'
 
 end
 
