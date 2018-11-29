@@ -63,13 +63,13 @@
             })
             .catch(function(res) {
               if (res.status === 401) {
-                var deferred = Q.defer();
-                var nav = $("#checkout-nav > a");
-                var href = nav.attr('href');
-                return setTimeout(function () {
-                  return window.location.assign(href);
+                var err = 'Please login first.'
+                var href = window.SIGN_IN_URL;
+                setTimeout(function () {
+                  window.location.assign(href);
                 }, 2000);
-                return Q.reject('Please confirm your identity.');
+                toastr.error(err);
+                return Q.reject(err);
               } else if (res.status === 422) {
                 var err = res.responseJSON.error || res.responseJSON.message;
                 toastr.error(err);

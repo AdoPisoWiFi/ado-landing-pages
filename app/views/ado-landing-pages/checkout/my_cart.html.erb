@@ -2,6 +2,7 @@
 <% content_for :head do %>
   <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
   <script>
+    window.SIGN_IN_URL = "<%= main_app.new_user_session_url(redirect_to: main_app.view_cart_url) %>";
     window.CART = <%= raw @cart.to_json =%>;
   </script>
 <% end %>
