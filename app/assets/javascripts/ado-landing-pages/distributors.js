@@ -1,5 +1,5 @@
 
-window.DISTRIBUTOR_PAGE_LOADED = false; 
+window.DISTRIBUTOR_PAGE_LOADED = false;
 
 angular.module('AdoDistributors', []).controller('DistributorsCtrl', [
   '$scope',
@@ -8,12 +8,12 @@ angular.module('AdoDistributors', []).controller('DistributorsCtrl', [
   }
 ]);
 
-$(document).on('turbolinks:load', function () {
+$(document).ready(function () {
 
-  console.log("PAGE_LOADED? ", window.DISTRIBUTOR_PAGE_LOADED);
+  var el = document.getElementById("distributors");
 
-  if (!window.DISTRIBUTOR_PAGE_LOADED)
-    angular.bootstrap(window.document.body, ["AdoDistributors"]);
+  if (!window.DISTRIBUTOR_PAGE_LOADED && el)
+    angular.bootstrap(el, ["AdoDistributors"]);
 
   window.DISTRIBUTOR_PAGE_LOADED = true;
 

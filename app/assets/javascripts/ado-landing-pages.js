@@ -9,8 +9,8 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
+// require turbolinks
 //
-//= require turbolinks
 //= require angular
 //= require ado-landing-pages/libs/q
 //= require ado-landing-pages/libs/jquery.min
@@ -30,4 +30,3 @@
 //= require ado-landing-pages/distributors
 //= require ado-landing-pages/toastr-config
 
-//
