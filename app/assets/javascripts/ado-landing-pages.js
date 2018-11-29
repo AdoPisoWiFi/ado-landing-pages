@@ -27,6 +27,7 @@
 //= require ado-landing-pages/contactform
 //= require ado-landing-pages/main
 //= require ado-landing-pages/checkout
+//= require ado-landing-pages/distributors
 //= require ado-landing-pages/toastr-config
 
 //
