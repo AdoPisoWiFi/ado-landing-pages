@@ -1,27 +1,41 @@
-<header id="header">
-  <div class="container-fluid">
+<div>
+  <header id="header">
+    <div class="container-fluid">
 
-    <div class="pull-left">
-      <!-- Uncomment below if you prefer to use a text logo -->
-      <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-      <h1 class="ado-logo"><a href="<%= main_app.root_url(subdomain: "www") %>#intro">Ado<span>Pi</span>Soft</a></h1>
+      <div class="pull-left">
+        <h1 class="ado-logo"><a href="<%= main_app.root_url(subdomain: "www") %>#intro">Ado<span>Pi</span>Soft</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="<%= main_app.root_url(subdomain: "www") %>#intro">Home</a></li>
+          <li>
+            <a href="<%= main_app.root_url(subdomain: "www") %>#about">About</a>
+          </li>
+          <li>
+            <a href="#features">Features</a>
+          </li>
+          <li>
+            <a href="<%= main_app.buy_url %>">Buy</a>
+          </li>
+          <li>
+            <a href="<%= main_app.lines_url(subdomain: "www") %>">Articles</a>
+          </li>
+          <li>
+            <a href="<%= main_app.thredded_url %>">Forum</a>
+          </li>
+          <li>
+            <a href="<%= main_app.monitor_url %>">Remote</a>
+          </li>
+          <li>
+            <a href="<%= main_app.downloads_url(subdomain: "www") %>">Downloads</a>
+          </li>
+          <%= render 'ado-landing-pages/partials/signup_nav_item' %>
+          <li class="buy-tickets">
+            <a href="<%= main_app.activation_url(subdomain: "www") %>">Buy License</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-
-    <nav id="nav-menu-container">
-      <ul class="nav-menu">
-        <li class="menu-active"><a href="<%= main_app.root_url(subdomain: "www") %>#intro">Home</a></li>
-        <li><a href="<%= main_app.root_url(subdomain: "www") %>#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="<%= main_app.buy_url %>">Buy</a></li>
-        <li><a href="<%= main_app.lines_url(subdomain: "www") %>">Articles</a></li>
-        <li><a href="<%= main_app.thredded_url %>">Forum</a></li>
-        <li><a href="<%= main_app.monitor_url %>">Remote</a></li>
-        <li><a href="<%= main_app.downloads_url(subdomain: "www") %>">Downloads</a></li>
-        <%= render 'ado-landing-pages/partials/signup_nav_item' %>
-        <li class="buy-tickets"><a href="<%= main_app.activation_url(subdomain: "www") %>">Buy License</a></li>
-      </ul>
-    </nav><!-- #nav-menu-container -->
-  </div>
-</header><!-- #header -->
-
-
+  </header>
+</div>
