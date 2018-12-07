@@ -1,6 +1,6 @@
 <h2>Download <%= app_name %> Software Image</h2>
 
-<p>Direct link - <a href="https://s3.amazonaws.com/adopisowifi/downloads/adopisowifi-v3.0.77-usb-boot-mode.zip">adopisowifi-v3.0.77-latest.zip </a>(~700MB)</p>
+<p>Direct link - <a href="<%= ENV['DOWNLOADS_URL'] %>"><%= ENV['DOWNLOADS_TEXT'] %></a></p>
 <p>The file contains a <code>.img</code> (Raspbian image) file which can be flashed into a micro SD card for raspberry pi 3.</p>
 
 <h3>Booting from USB Mass Storage</h3>
