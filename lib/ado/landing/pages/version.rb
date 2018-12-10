@@ -1,7 +1,7 @@
 module Ado
   module Landing
     module Pages
-      VERSION = "0.1.29"
+      VERSION = "1.0.0"
     end
   end
 end
