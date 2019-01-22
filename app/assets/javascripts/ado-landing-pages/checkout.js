@@ -56,6 +56,7 @@
           toastr.error('Please add items to your cart.', 'Empty Cart');
           return Q.reject(true);
         } else {
+          console.log(window.CART)
           return Payment.create(window.CART)
             .then(function (data) {
               payment_id = data.id;
@@ -70,12 +71,11 @@
                 }, 2000);
                 toastr.error(err);
                 return Q.reject(err);
-              } else if (res.status === 422) {
+              } else if (res.status == 422) {
                 var err = res.responseJSON.error || res.responseJSON.message;
                 toastr.error(err);
                 return Q.reject(err);
               }
-
               return Q.reject(res);
             });
         }
@@ -91,8 +91,14 @@
             window.location.assign(data.redirect_to);
           })
           .catch(function (res) {
-            Payment.failed(payment_id);
-            return Q.reject(res);
+
+            if (payment_id)
+              Payment.failed(payment_id);
+
+            var err = res.responseJSON.error || res.responseJSON.message;
+            window.alert(err + "\n\nYOUR BALANCE WAS NOT DEDUCTED");
+            toastr.error("Transaction did not proceed.");
+            //return Q.reject(res);
           });
       },
 
