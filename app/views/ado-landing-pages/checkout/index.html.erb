@@ -5,6 +5,7 @@
 <div class="container">
   <%= render 'ado-landing-pages/checkout/session_nav' %>
 
+
   <h3 class="text-right">
     <%= link_to view_cart_path do %>
       Your Cart
@@ -14,6 +15,8 @@
   </h3>
 
 </div>
+
+<%= render 'ado-landing-pages/partials/paypal_warning' %>
 
 <section id="buy-tickets" class="section-with-bg wow fadeIn">
   <div class="container">
@@ -49,16 +52,16 @@
                     <%= p.volume %>
                   </strong>
                   wifi vendo machine<%= if p.volume > 1 then 's' else '' end %>
-                </li>
-                <li><span class="fa-li"><i class="fa fa-check"></i></span>Unlimitted WiFi Users</li>
-                <li><span class="fa-li"><i class="fa fa-check"></i></span>Online Remote Access</li>
-                <li><span class="fa-li"><i class="fa fa-check"></i></span>Lifetime License</li>
-                <li><span class="fa-li"><i class="fa fa-check"></i></span>Free software updates</li>
-                <% if p.volume >= 10 %>
-                  <li class="text-danger"><span class="fa-li"><i class="fa fa-check"></i></span> <%= link_to "Exclusive For Distributors", "/blog/articles/how-to-be-a-distributor" %></li>
-                <% else %>
-                  <li class="text-success"><span class="fa-li"><i class="fa fa-check"></i></span>Available For All</li>
-                <% end %>
+                  </li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Unlimitted WiFi Users</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Online Remote Access</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Lifetime License</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Free software updates</li>
+                  <% if p.volume >= 10 %>
+                    <li class="text-danger"><span class="fa-li"><i class="fa fa-check"></i></span> <%= link_to "Exclusive For Distributors", "/blog/articles/how-to-be-a-distributor" %></li>
+                  <% else %>
+                    <li class="text-success"><span class="fa-li"><i class="fa fa-check"></i></span>Available For All</li>
+                  <% end %>
 
               </ul>
               <hr>
